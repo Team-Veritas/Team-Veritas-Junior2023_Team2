@@ -8,15 +8,15 @@ from pybricks.media.ev3dev import SoundFile, ImageFile
 
 
 ev3 = EV3Brick()
-left_motor = Motor(Port.C, Direction.COUNTERCLOCKWISE)
-right_motor= Motor(Port.B,  Direction.COUNTERCLOCKWISE)
+left_motor = Motor(Port.C)
+right_motor= Motor(Port.B)
 # left_arm = Motor(Port.D)
 # right_arm = Motor(Port.A)
 
 color_1 = ColorSensor(Port.S1)
 color_2 = ColorSensor(Port.S2)
-color_3 = ColorSensor(Port.S3)
-distance = UltrasonicSensor(Port.S4)
+#color_3 = ColorSensor(Port.S3)
+#5distance = UltrasonicSensor(Port.S4)
 
 # robot = DriveBase(left_motor, right_motor, 56 , 158)
 
@@ -26,9 +26,9 @@ distance = UltrasonicSensor(Port.S4)
 def go_line(speed, degrees):
 
     # PID 상수 정의
-    Kp = 1
+    Kp = 2
     Ki = 0.01
-    Kd = 5
+    Kd = 10
 
     # 오차 변수 초기화
     error = 0
