@@ -6,15 +6,8 @@ from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
 
+from module_device import *
 
-ev3 = EV3Brick()
-left_motor = Motor(Port.C)
-right_motor= Motor(Port.B)
-# left_arm = Motor(Port.D)
-# right_arm = Motor(Port.A)
-
-color_1 = ColorSensor(Port.S1)
-color_2 = ColorSensor(Port.S2)
 #color_3 = ColorSensor(Port.S3)
 #5distance = UltrasonicSensor(Port.S4)
 
@@ -23,12 +16,12 @@ color_2 = ColorSensor(Port.S2)
 # "go_line" 함수
 #  컬러센서 2개를 이용하여 검정색 라인을 따라 이동한다.
 #   파라미터는 이동시 속도, 모터의 각도 값이다.
-def go_line(speed, degrees):
+def go_line(speed, degrees  ,a,b,c):
 
     # PID 상수 정의
-    Kp = 2
-    Ki = 0.01
-    Kd = 10
+    Kp = a
+    Ki = b
+    Kd = c
 
     # 오차 변수 초기화
     error = 0
@@ -67,20 +60,3 @@ def go_line(speed, degrees):
         right_motor.dc(right_speed)
 
 
-# "robot_stop" 함수
-#  로봇을 정지하도록 하는 함수이다.
-#   파라미터는 부드러운 정지를 원하면 stop, 모터 위치를 정지한 곳을 유지하고 싶을때는 hold,
-#   흔히 말하는 일반 정지는 아무런 값도 입력하지 않으면 된다.
-def robot_stop(text):
-    if text == "stop" :
-        left_motor.stop()
-        right_motor.stop()
-
-    elif text == "hold" :
-        left_motor.hold()
-        right_motor.hold()
-        wait(200)
-    else:
-    # elif text == "brake":
-        left_motor.brake()
-        right_motor.brake()
