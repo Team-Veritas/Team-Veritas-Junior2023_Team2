@@ -30,8 +30,8 @@ color_2 = LightSensor(Port.S2)
 # 각자 구역을 정해 프로젝트를 완성합니다.
 right.run_angle(500,700,Stop.BRAKE,False)
 left.run_angle(500,700)
-# right_motor.run_angle(1000, 100)
-# left_motor.run_angle(1000, 100)
+right_motor.run_angle(1000, 100)
+left_motor.run_angle(1000, 100)
 
 # while True:
 #     print(color_1.reflection(),color_2.reflection())
