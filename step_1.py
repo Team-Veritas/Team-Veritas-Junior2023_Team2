@@ -9,21 +9,24 @@ from pybricks.media.ev3dev import SoundFile, ImageFile
 from move_robot import go_line, robot_stop
 
 ev3 = EV3Brick()
-left_motor = Motor(Port.C, Direction.COUNTERCLOCKWISE)
-right_motor= Motor(Port.B,  Direction.COUNTERCLOCKWISE)
+left_motor = Motor(Port.B)
+right_motor= Motor(Port.C)
 # left_arm = Motor(Port.D)
 # right_arm = Motor(Port.A)
 
-color_1 = ColorSensor(Port.S1)
-color_2 = ColorSensor(Port.S2)
+color_1 = LightSensor(Port.S1)
+color_2 = LightSensor(Port.S2)
 color_3 = ColorSensor(Port.S3)
-distance = UltrasonicSensor(Port.S4)
-
+# color_3 = ColorSensor(Port.S3)
+# distance = UltrasonicSensor(Port.S4)
 
 
 def step_1():
-    robot = DriveBase(left_motor, right_motor, 56 , 158)
-    robot.settings(1024, 1024, 1024)
-    robot.turn(45)
-    robot.straight(180)
-    robot.turn(-25)
+#     robot = DriveBase(left_motor, right_motor, 56 , 158)
+#     robot.settings(1024, 1024, 1024)
+#     robot.turn(45)
+#     robot.straight(180)
+#     robot.turn(-25)
+    go_line(70,800,1, 0.001, 8)
+    
+
