@@ -5,8 +5,20 @@ from pybricks.parameters import Port, Stop, Direction, Button, Color
 from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
+from pybricks.nxtdevices import*
 
 from module_device import *
+ev3 = EV3Brick()
+left_motor = Motor(Port.C)
+right_motor = Motor(Port.B)
+#left_arm = Motor(Port.D)
+#right_arm = Motor(Port.A)
+
+color_1 = LightSensor(Port.S1)
+color_2 = LightSensor(Port.S2)
+
+color_3 = ColorSensor(Port.S3)
+#distance = UltrasonicSensor(Port.S4)
 
 #color_3 = ColorSensor(Port.S3)
 #5distance = UltrasonicSensor(Port.S4)

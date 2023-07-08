@@ -5,8 +5,9 @@ from pybricks.parameters import Port, Stop, Direction, Button, Color
 from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
-
-from move_robot import go_line, robot_stop
+from pybricks.nxtdevices import*
+from module_line import*
+from module_stop import*
 
 ev3 = EV3Brick()
 left_motor = Motor(Port.B)
@@ -22,11 +23,17 @@ color_3 = ColorSensor(Port.S3)
 
 
 def step_1():
-#     robot = DriveBase(left_motor, right_motor, 56 , 158)
+    robot = DriveBase(left_motor, right_motor, 56 , 158)
 #     robot.settings(1024, 1024, 1024)
-#     robot.turn(45)
-#     robot.straight(180)
-#     robot.turn(-25)
-    go_line(70,800,1, 0.001, 8)
+    
+    
+    # robot.straight(100)
+    # 
+    right_motor.run_angle(300,250)
+    left_motor.run_angle(300,250)
+    robot.stop()
+    
+    go_line(55,800,1, 0.001, 8)
+    robot_stop("brake")
     
 
