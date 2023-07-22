@@ -19,8 +19,8 @@ from module_line import*
 ev3 = EV3Brick()
 left_motor = Motor(Port.C)
 right_motor = Motor(Port.B)
-#left_arm = Motor(Port.D)
-#right_arm = Motor(Port.A)
+left_arm = Motor(Port.D)
+right_arm = Motor(Port.A)
 
 color_1 = LightSensor(Port.S1)
 color_2 = LightSensor(Port.S2)
